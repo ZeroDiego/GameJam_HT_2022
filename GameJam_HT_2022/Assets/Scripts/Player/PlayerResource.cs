@@ -19,6 +19,11 @@ public class PlayerResource : MonoBehaviour
 		jam -= jamReducer;
 	}
 
+	public void EatJam(int jamValue)
+	{
+		jam += jamValue;
+	}
+
 	private void ReduceMoreJam()
 	{
 		jamReducer += jamAdditive;

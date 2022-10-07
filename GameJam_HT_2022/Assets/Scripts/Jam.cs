@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Jam : MonoBehaviour
 {
+    private JamSpawner spawner;
     public int jamValue;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawner = GetComponent<JamSpawner>();
     }
 
     // Update is called once per frame
@@ -19,6 +20,14 @@ public class Jam : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-        gameObject.SetActive(false);
+        StartCoroutine(TakeJam());
 	}
+
+    private IEnumerator TakeJam()
+    {
+        gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(3);
+        spawner.SetJamPosition(gameObject);
+    }
 }

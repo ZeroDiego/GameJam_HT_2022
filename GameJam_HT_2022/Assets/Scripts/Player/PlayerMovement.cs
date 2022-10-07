@@ -8,11 +8,25 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontal;
     private float vertical;
-    public float moveLimiter = 0.7f;
+    [SerializeField] public float moveLimiter = 0.7f;
 
-    public float runSpeed = 20.0f;
+    [SerializeField] public float runSpeed = 20.0f;
+    private static PlayerMovement instance;
+    public PlayerMovement Instance { get { return instance; } set { instance = value; } }
 
-    void Start()
+    private void Awake()
+	{
+        if (Instance != null)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+	}
+
+	void Start()
     {
         body = GetComponent<Rigidbody2D>();
     }
