@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bee_Movement : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private Vector2 moveDirection;
+    //private Rigidbody2D rb;
+    //private Vector2 moveDirection;
     public Transform target;
 
     public float moveSpeed = 1f;
@@ -15,17 +15,17 @@ public class Bee_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(target)
+        /*if(target)
         {
             Vector3 direction = (target.position - transform.position).normalized;
             moveDirection = direction;
-        }
+        }*/
 
         if(isFacingRight == true)
         {
