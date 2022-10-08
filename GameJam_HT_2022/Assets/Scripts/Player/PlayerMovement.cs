@@ -51,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
         GameObject spit = null;
         foreach (Transform t in spitList)
         {
-            print(t.name);
             if (t.gameObject.activeSelf == false)
             {
                 spit = t.gameObject;
@@ -85,7 +84,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (horizontal != 0 && vertical != 0) // Check for diagonal movement
         {
-            // limit movement speed diagonally, so you move at 70% speed
             horizontal *= moveLimiter;
             vertical *= moveLimiter;
         }
