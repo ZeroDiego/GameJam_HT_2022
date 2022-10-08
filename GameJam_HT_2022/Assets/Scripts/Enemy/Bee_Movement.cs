@@ -6,7 +6,7 @@ public class Bee_Movement : MonoBehaviour
 {
     //private Rigidbody2D rb;
     //private Vector2 moveDirection;
-    public Transform target;
+    private GameObject target;
 
     public float moveSpeed = 1f;
     private bool isFacingRight;
@@ -16,6 +16,7 @@ public class Bee_Movement : MonoBehaviour
     void Start()
     {
         //rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -47,9 +48,9 @@ public class Bee_Movement : MonoBehaviour
         {
             if(target == true)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
 
-                if(target.position.x - transform.position.x < 0)
+                if(target.transform.position.x - transform.position.x < 0)
                 {
                     isFacingRight = true;
                 }
