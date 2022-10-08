@@ -5,21 +5,20 @@ using UnityEngine.UI;
 
 public class UI_Jam : MonoBehaviour
 {
-    public PlayerResource playerJam;
-
     private float maxJam;
 
     private Slider slider;
 
     private void Start()
     {
-        maxJam = playerJam.jam;
+        maxJam = PlayerResource.Instance.jam;
         slider = GetComponent<Slider>();
         slider.maxValue = maxJam;
+        slider.value = maxJam;
     }
 
     private void Update()
     {
-        slider.value = playerJam.jam;
+        slider.value = PlayerResource.Instance.jam;
     }
 }

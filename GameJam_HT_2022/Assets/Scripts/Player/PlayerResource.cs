@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerResource : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class PlayerResource : MonoBehaviour
 	[SerializeField] private float jamReducer = 0.10f;
 	[SerializeField] private float jamAdditive = 0.05f;
 	[SerializeField] private float jamReducerLimit = 0.4f;
-	[SerializeField] private float hitPoints = 100f;
+	public float hitPoints = 100f;
+	private GameOverUI gameOverUI;
 
 	private static PlayerResource instance;
 	public static PlayerResource Instance { get { return instance; } set { instance = value; } }
@@ -27,6 +29,7 @@ public class PlayerResource : MonoBehaviour
 
 	private void Start()
 	{
+		gameOverUI = FindObjectOfType<GameOverUI>();
 		InvokeRepeating(nameof(ReduceMoreJam), 0, 5f);
 	}
 
@@ -52,9 +55,11 @@ public class PlayerResource : MonoBehaviour
 		hitPoints -= damage;
 		if (hitPoints <= 0)
 		{
-			//Game over
+			gameOverUI.GameOver();
 		}
 	}
+
+
 
 	private void ReduceMoreJam()
 	{
