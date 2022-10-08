@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4619823908915674882}
   m_Layer: 0
   m_Name: Bugman
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveLimiter: 0.7
   runSpeed: 20
+  spitObject: {fileID: 0}
+  firePoint: {fileID: 0}
+  spitList: {fileID: 0}
 --- !u!50 &5879088240436890036
 Rigidbody2D:
   serializedVersion: 4
