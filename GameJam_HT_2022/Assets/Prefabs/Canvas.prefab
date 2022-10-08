@@ -409,7 +409,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -507,6 +507,7 @@ GameObject:
   - component: {fileID: 1800387374}
   - component: {fileID: 1800387376}
   - component: {fileID: 1800387375}
+  - component: {fileID: 6697558869254397611}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -569,13 +570,26 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'SCORE:'
+--- !u!114 &6697558869254397611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800387373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f1c83d637a07745858e4af93e25a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
 --- !u!1 &1897906739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,6 +1587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 806030595}
+  timerObject: {fileID: 6697558869270415330}
+  scoreTextObject: {fileID: 6697558869254397611}
 --- !u!1 &6697558869052265139
 GameObject:
   m_ObjectHideFlags: 0

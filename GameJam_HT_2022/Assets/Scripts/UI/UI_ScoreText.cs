@@ -7,5 +7,12 @@ public class UI_ScoreText : MonoBehaviour
 {
     [SerializeField] private Text text;
 
-
+    private void OnEnable()
+    {
+        text = GetComponent<Text>();
+    }
+    public void SetText()
+    {
+        text.text = "Score: " + PlayerPrefs.GetInt("Score");
+    }
 }

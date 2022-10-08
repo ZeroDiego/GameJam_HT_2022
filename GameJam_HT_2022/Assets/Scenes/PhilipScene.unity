@@ -535,42 +535,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 806030595, guid: 7f167d023bb41ca45bfc59eacfd91125, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1066032797, guid: 7f167d023bb41ca45bfc59eacfd91125, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 8d9f3ff6a87252545bc909fcb7ebfe3a, type: 3}
-    - target: {fileID: 1066032797, guid: 7f167d023bb41ca45bfc59eacfd91125, type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1400016976, guid: 7f167d023bb41ca45bfc59eacfd91125, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 8d9f3ff6a87252545bc909fcb7ebfe3a, type: 3}
-    - target: {fileID: 1800387375, guid: 7f167d023bb41ca45bfc59eacfd91125, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 8d9f3ff6a87252545bc909fcb7ebfe3a, type: 3}
-    - target: {fileID: 1800387375, guid: 7f167d023bb41ca45bfc59eacfd91125, type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800387375, guid: 7f167d023bb41ca45bfc59eacfd91125, type: 3}
-      propertyPath: m_FontData.m_VerticalOverflow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800387375, guid: 7f167d023bb41ca45bfc59eacfd91125, type: 3}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1897906741, guid: 7f167d023bb41ca45bfc59eacfd91125, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 8d9f3ff6a87252545bc909fcb7ebfe3a, type: 3}
     - target: {fileID: 6697558867659911436, guid: 7f167d023bb41ca45bfc59eacfd91125, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
