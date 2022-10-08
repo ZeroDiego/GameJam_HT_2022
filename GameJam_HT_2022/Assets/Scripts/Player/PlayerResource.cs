@@ -8,7 +8,7 @@ public class PlayerResource : MonoBehaviour
 	[SerializeField] private float jamReducer = 0.10f;
 	[SerializeField] private float jamAdditive = 0.05f;
 	[SerializeField] private float jamReducerLimit = 0.4f;
-	[SerializeField] private float hitPoints = 100f;
+	public float hitPoints = 100f;
 
 	private static PlayerResource instance;
 	public static PlayerResource Instance { get { return instance; } set { instance = value; } }
