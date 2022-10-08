@@ -20,6 +20,9 @@ public class Jam : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-        spawner.DisableJam(gameObject);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            spawner.DisableJam(gameObject);
+        }
 	}
 }
