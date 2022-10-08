@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Jam : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayerResource playerJam;
+
+    private float maxJam;
+
+    private Slider slider;
+
+    private void Start()
     {
-        
+        maxJam = playerJam.jam;
+        slider = GetComponent<Slider>();
+        slider.maxValue = maxJam;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        slider.value = playerJam.jam;
     }
 }
