@@ -15,10 +15,12 @@ public class Enemy_Health : MonoBehaviour
     [SerializeField] private SpriteRenderer enemySpriteRenderer;
     [SerializeField] private Animator animator;
 
+    private Collider2D coll2D;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        coll2D = gameObject.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class Enemy_Health : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Bullet") == true)
+        if(collision.gameObject.CompareTag("Spit") == true)
         {
         
             EnemyTakeDamage();
@@ -54,6 +56,7 @@ public class Enemy_Health : MonoBehaviour
             animator.enabled = false;
             deathParticles.Play();
             audioSource.PlayOneShot(deathClip);
+            coll2D.enabled = false;
 
             if (gameObject.tag == "Spider")
             {

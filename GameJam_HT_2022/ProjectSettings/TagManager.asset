@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spit
+  - Bee
+  - Spider
   layers:
   - Default
   - TransparentFX
