@@ -4885,6 +4885,7 @@ GameObject:
   - component: {fileID: 1570705716}
   - component: {fileID: 1570705714}
   - component: {fileID: 1570705715}
+  - component: {fileID: 227370448}
   m_Layer: 0
   m_Name: Enemy_Spider
   m_TagString: Spider
@@ -4992,9 +4993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b02c5d0376d2794e904acced42143e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   moveSpeed: 4
   rotationSpeed: 2
+  enemyDamage: 20
 --- !u!61 &1570705716
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5135,3 +5136,24 @@ MonoBehaviour:
   deathParticles: {fileID: 1417812746}
   enemySpriteRenderer: {fileID: 418538168782222382}
   animator: {fileID: 418538168782222417}
+--- !u!50 &227370448
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418538168782222416}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
