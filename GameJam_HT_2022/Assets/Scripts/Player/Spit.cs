@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Spit : MonoBehaviour
 {
-	private Rigidbody2D rigidbody;
+	private Rigidbody2D rigidBody;
 	[SerializeField] private float speed;
 	public float damage;
 
 	public void Awake()
 	{
-		rigidbody = GetComponent<Rigidbody2D>();
+		rigidBody = GetComponent<Rigidbody2D>();
 	}
 
 	public void Shot(Transform firepoint)
 	{
-		rigidbody.AddForce(firepoint.up * speed, ForceMode2D.Impulse);
+		rigidBody.AddForce(firepoint.up * speed, ForceMode2D.Impulse);
 	}
 
 	private void OnBecameInvisible()
