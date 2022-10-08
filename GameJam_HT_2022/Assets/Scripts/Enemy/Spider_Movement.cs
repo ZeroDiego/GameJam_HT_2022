@@ -10,6 +10,7 @@ public class Spider_Movement : MonoBehaviour
 
     public float moveSpeed = 1f;
     public float rotationSpeed = 4f;
+    public float enemyDamage = 20f;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,14 @@ public class Spider_Movement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
 
             transform.position = Vector2.MoveTowards(transform.position, closestJam.transform.position, moveSpeed * Time.deltaTime);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player") == true)
+        {
+            collision.gameObject.GetComponent<PlayerResource>().TakeDamage(enemyDamage);
         }
     }
 }
