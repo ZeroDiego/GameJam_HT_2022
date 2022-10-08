@@ -40,7 +40,7 @@ public class Enemy_Health : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Spit") == true)
         {
-        
+            collision.gameObject.SetActive(false);
             EnemyTakeDamage();
             
         }

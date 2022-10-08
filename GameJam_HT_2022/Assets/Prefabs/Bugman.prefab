@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915705557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.001, y: 0.619, z: 0}
+  m_LocalPosition: {x: -0.001, y: 0.288, z: 0}
   m_LocalScale: {x: 1, y: 0.41, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_SortingOrder: 6
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4797097302292436174
@@ -162,8 +162,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingOrder: 6
+  m_Sprite: {fileID: 21300000, guid: 81c4989786602584bb1ca1418c9a03f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -189,11 +189,13 @@ MonoBehaviour:
   moveLimiter: 0.7
   runSpeed: 20
   rotationSpeed: 5
-  spitObject: {fileID: 7035863026821518776, guid: d5363abd77965fb419ca0a8b4de34d38, type: 3}
+  spitObject: {fileID: 151364486313759315, guid: da257f4e68855e14aa0972224c8476d3, type: 3}
   firePoint: {fileID: 1480494596166382366}
   spitList: {fileID: 0}
   audioSource: {fileID: 100103249}
   spitClip: {fileID: 8300000, guid: 4f9a5c9e901b9ef4990d6b302134542d, type: 3}
+  timer: 0
+  shotCooldown: 0.4
 --- !u!50 &5879088240436890036
 Rigidbody2D:
   serializedVersion: 4
@@ -232,7 +234,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 0.72}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -257,6 +259,7 @@ MonoBehaviour:
   jamReducer: 0.1
   jamAdditive: 0.05
   jamReducerLimit: 0.4
+  invisTime: 1.5
   hitPoints: 100
 --- !u!82 &100103249
 AudioSource:
