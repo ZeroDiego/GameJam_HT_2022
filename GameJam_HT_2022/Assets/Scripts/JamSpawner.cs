@@ -49,6 +49,5 @@ public class JamSpawner : MonoBehaviour
     {
         spawnedJam.SetActive(true);
         spawnedJam.transform.position = new Vector2(Random.Range(-x, x), Random.Range(-y, y));
-        //spawnedJam changes position
     }
 }
