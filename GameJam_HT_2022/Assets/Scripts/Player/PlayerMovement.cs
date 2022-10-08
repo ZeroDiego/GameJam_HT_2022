@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject spitObject;
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform spitList;
+
     private static PlayerMovement instance;
     public static PlayerMovement Instance { get { return instance; } set { instance = value; } }
 

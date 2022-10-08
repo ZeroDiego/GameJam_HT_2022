@@ -8,6 +8,7 @@ public class PlayerResource : MonoBehaviour
 	[SerializeField] private float jamReducer = 0.10f;
 	[SerializeField] private float jamAdditive = 0.05f;
 	[SerializeField] private float jamReducerLimit = 0.4f;
+	[SerializeField] private float hitPoints = 100f;
 
 	private static PlayerResource instance;
 	public static PlayerResource Instance { get { return instance; } set { instance = value; } }
@@ -31,12 +32,28 @@ public class PlayerResource : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		jam -= jamReducer;
+		if (jam <= 0)
+		{
+			TakeDamage(jamReducer);
+		}
+		else
+		{
+			jam -= jamReducer;
+		}
 	}
 
 	public void EatJam(int jamValue)
 	{
 		jam += jamValue;
+	}
+
+	public void TakeDamage(float damage)
+	{
+		hitPoints -= damage;
+		if (hitPoints <= 0)
+		{
+			//Game over
+		}
 	}
 
 	private void ReduceMoreJam()
