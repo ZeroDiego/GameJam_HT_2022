@@ -5,23 +5,30 @@ using UnityEngine;
 public class JamSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject jamObject;
-    [SerializeField] private Vector2 area;
-    [SerializeField]private float x = 8;
-    [SerializeField]private float y = 4;
+    [SerializeField] private float x = 0;
+    [SerializeField] private float y = 0;
+    [SerializeField] private int spawnSecondJam = 15;
+    [SerializeField] private int spawnThirdJam = 40;
 
     private void Start()
 	{
-        x *= Screen.width;
-        x /= 1920;
-
-        y *= Screen.height;
-        y /= 1080;
-
-        SpawnJam();
-        
+        x = Camera.main.aspect + 5;
+        y = Camera.main.aspect + 2;
+        StartGame();
     }
 
-	public void SpawnJam()
+    public void StartGame()
+    {
+        while (transform.childCount > 0)
+        {
+            Destroy(transform.GetChild(0));
+        }
+        SpawnJam();
+        Invoke(nameof(SpawnJam), spawnSecondJam);
+        Invoke(nameof(SpawnJam), spawnThirdJam);
+    }
+
+    public void SpawnJam()
     {
         Instantiate(jamObject, transform);
     }
