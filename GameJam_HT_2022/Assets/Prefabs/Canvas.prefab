@@ -666,6 +666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6697558867470220297}
   - component: {fileID: 6697558867470220298}
+  - component: {fileID: 284480065810058108}
   m_Layer: 5
   m_Name: HealthSlider
   m_TagString: Untagged
@@ -747,6 +748,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &284480065810058108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6697558867470220296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b532f94e2a96048bc39bbef0f6bd1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6697558867535034552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 365.8279, y: 225.77824}
+  m_AnchoredPosition: {x: 355, y: 225.77824}
   m_SizeDelta: {x: 160, y: 32}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &6697558867996059796
@@ -1063,7 +1076,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 8d9f3ff6a87252545bc909fcb7ebfe3a, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -1664,7 +1677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd6446c660f75e345b954d698b501f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerJam: {fileID: 0}
 --- !u!1 &6697558869270415328
 GameObject:
   m_ObjectHideFlags: 0
