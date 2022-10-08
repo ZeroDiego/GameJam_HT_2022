@@ -11,6 +11,7 @@ public class PlayerResource : MonoBehaviour
 	[SerializeField] private float jamReducerLimit = 0.4f;
 	public float hitPoints = 100f;
 	private GameOverUI gameOverUI;
+	private float timer = 1;
 
 	private static PlayerResource instance;
 	public static PlayerResource Instance { get { return instance; } set { instance = value; } }
@@ -35,6 +36,7 @@ public class PlayerResource : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		timer += Time.deltaTime;
 		if (jam <= 0)
 		{
 			TakeDamage(jamReducer);
@@ -52,10 +54,14 @@ public class PlayerResource : MonoBehaviour
 
 	public void TakeDamage(float damage)
 	{
-		hitPoints -= damage;
-		if (hitPoints <= 0)
+		if (timer > 1 || damage < 1)
 		{
-			gameOverUI.GameOver();
+			timer = 0;
+			hitPoints -= damage;
+			if (hitPoints <= 0)
+			{
+				gameOverUI.GameOver();
+			}
 		}
 	}
 
