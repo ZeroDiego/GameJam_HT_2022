@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject spitObject;
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform spitList;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip spitClip;
 
     private static PlayerMovement instance;
     public static PlayerMovement Instance { get { return instance; } set { instance = value; } }
@@ -51,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 	private void Shoot()
 	{
         GameObject spit = null;
+        audioSource.PlayOneShot(spitClip);
         foreach (Transform t in spitList)
         {
             if (t.gameObject.activeSelf == false)
@@ -71,8 +74,7 @@ public class PlayerMovement : MonoBehaviour
         spit.transform.SetPositionAndRotation(firePoint.position, firePoint.rotation);
         spit.GetComponent<Spit>().Shot(firePoint);
         spit.transform.parent = spitList;
-
-	}
+    }
 
 	private void RotateAfterMouse()
     {
