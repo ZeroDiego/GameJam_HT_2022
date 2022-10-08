@@ -11,6 +11,7 @@ public class Bee_Movement : MonoBehaviour
     public float moveSpeed = 1f;
     private bool isFacingRight;
     private bool isAlive = true;
+    public float enemyDamage = 30f;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,14 @@ public class Bee_Movement : MonoBehaviour
                     isFacingRight = false;
                 }
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") == true)
+        {
+            collision.gameObject.GetComponent<PlayerResource>().TakeDamage(enemyDamage);
         }
     }
 }
