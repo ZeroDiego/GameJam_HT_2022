@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerResource : MonoBehaviour
 {
     public float jam = 100;
+	private float maxJam;
 	[SerializeField] private float jamReducer = 0.10f;
 	[SerializeField] private float jamAdditive = 0.05f;
 	[SerializeField] private float jamReducerLimit = 0.4f;
@@ -30,6 +31,7 @@ public class PlayerResource : MonoBehaviour
 
 	private void Start()
 	{
+		maxJam = jam;
 		gameOverUI = FindObjectOfType<GameOverUI>();
 		InvokeRepeating(nameof(ReduceMoreJam), 0, 5f);
 	}
@@ -50,6 +52,10 @@ public class PlayerResource : MonoBehaviour
 	public void EatJam(int jamValue)
 	{
 		jam += jamValue;
+		if (jam > maxJam)
+		{
+			jam = maxJam;
+		}
 	}
 
 	public void TakeDamage(float damage)
