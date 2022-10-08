@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    [SerializeField] private List<AudioClip> songs;
-    [SerializeField] private List<AudioClip> songsToPlay;
+    [SerializeField] private List<AudioClip> songs = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> songsToPlay = new List<AudioClip>();
     private AudioSource aS;
 
     private void Start()
@@ -15,6 +15,11 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
+        if (songsToPlay.Count == 0)
+        {
+            songsToPlay = new List<AudioClip>(songs);
+        }
+
         if (!aS.isPlaying)
         {
             int randomSong = Random.Range(0, songsToPlay.Count);
@@ -22,11 +27,6 @@ public class MusicManager : MonoBehaviour
             songsToPlay.Remove(songClip);
             aS.clip = songClip;
             aS.Play();
-        }
-
-        if (songsToPlay.Count == 0)
-        {
-            songsToPlay = new List<AudioClip>(songs);
         }
     }
 }
