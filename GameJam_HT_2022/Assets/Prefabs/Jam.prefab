@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8305183402753074172}
   - component: {fileID: 8601861915821184604}
   - component: {fileID: 523757751341457201}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jam
   m_TagString: Untagged
   m_Icon: {fileID: 0}

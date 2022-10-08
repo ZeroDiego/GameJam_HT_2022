@@ -22,6 +22,7 @@ public class Jam : MonoBehaviour
 	{
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlayerResource.Instance.EatJam(jamValue);
             spawner.DisableJam(gameObject);
         }
 	}

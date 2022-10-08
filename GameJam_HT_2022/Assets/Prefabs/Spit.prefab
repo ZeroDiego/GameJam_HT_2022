@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7035863026821518781}
   - component: {fileID: 7035863026821518782}
   - component: {fileID: 7035863026821518783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spit
   m_TagString: Spit
   m_Icon: {fileID: 0}

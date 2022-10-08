@@ -9,6 +9,21 @@ public class PlayerResource : MonoBehaviour
 	[SerializeField] private float jamAdditive = 0.05f;
 	[SerializeField] private float jamReducerLimit = 0.4f;
 
+	private static PlayerResource instance;
+	public static PlayerResource Instance { get { return instance; } set { instance = value; } }
+
+	private void Awake()
+	{
+		if (Instance != null)
+		{
+			Destroy(this);
+		}
+		else
+		{
+			Instance = this;
+		}
+	}
+
 	private void Start()
 	{
 		InvokeRepeating(nameof(ReduceMoreJam), 0, 5f);

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1915705558}
   - component: {fileID: 1915705559}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915705557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.007, y: 0.783, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.001, y: 0.619, z: 0}
+  m_LocalScale: {x: 1, y: 0.41, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1480494596166382366}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 5879088240436890036}
   - component: {fileID: -650249053414409357}
   - component: {fileID: 4619823908915674882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bugman
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ MonoBehaviour:
   moveLimiter: 0.7
   runSpeed: 20
   spitObject: {fileID: 7035863026821518776, guid: d5363abd77965fb419ca0a8b4de34d38, type: 3}
-  firePoint: {fileID: 1915705558}
+  firePoint: {fileID: 1480494596166382366}
   spitList: {fileID: 0}
 --- !u!50 &5879088240436890036
 Rigidbody2D:

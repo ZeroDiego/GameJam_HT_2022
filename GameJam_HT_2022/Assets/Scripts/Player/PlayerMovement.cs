@@ -11,12 +11,13 @@ public class PlayerMovement : MonoBehaviour
     private float vertical;
     [SerializeField] public float moveLimiter = 0.7f;
 
-    [SerializeField] public float runSpeed = 20.0f;
-    [SerializeField] public GameObject spitObject;
-    [SerializeField] public Transform firePoint;
-    [SerializeField] public Transform spitList;
+    [SerializeField] private float runSpeed = 20.0f;
+    [SerializeField] private float rotationSpeed = 5f;
+    [SerializeField] private GameObject spitObject;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private Transform spitList;
     private static PlayerMovement instance;
-    public PlayerMovement Instance { get { return instance; } set { instance = value; } }
+    public static PlayerMovement Instance { get { return instance; } set { instance = value; } }
 
     private void Awake()
 	{
@@ -77,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, runSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
     }
 
     void FixedUpdate()
