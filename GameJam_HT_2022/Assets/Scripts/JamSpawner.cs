@@ -41,7 +41,7 @@ public class JamSpawner : MonoBehaviour
     public IEnumerator TakeJam(GameObject gO)
     {
         gO.SetActive(false);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         SetJamPosition(gO);
     }
 

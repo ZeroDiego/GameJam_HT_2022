@@ -15,7 +15,7 @@ public class Spider_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        spawner = GetComponentInParent<JamSpawner>();
     }
 
     // Update is called once per frame

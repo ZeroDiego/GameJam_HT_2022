@@ -25,5 +25,10 @@ public class Jam : MonoBehaviour
             PlayerResource.Instance.EatJam(jamValue);
             spawner.DisableJam(gameObject);
         }
+
+        if(collision.gameObject.CompareTag("Spider"))
+        {
+            spawner.DisableJam(gameObject);
+        }
 	}
 }
