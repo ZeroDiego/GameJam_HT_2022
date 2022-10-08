@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float runSpeed = 20.0f;
     [SerializeField] public GameObject spitObject;
     [SerializeField] public Transform firePoint;
+    [SerializeField] public Transform spitList;
     private static PlayerMovement instance;
     public PlayerMovement Instance { get { return instance; } set { instance = value; } }
 
@@ -48,9 +49,10 @@ public class PlayerMovement : MonoBehaviour
 	private void Shoot()
 	{
         GameObject spit = null;
-        foreach (Transform t in GetComponentInChildren<Transform>())
+        foreach (Transform t in spitList)
         {
-            if (!t.gameObject.activeSelf && GetComponentInChildren<Spit>(true))
+            print(t.name);
+            if (t.gameObject.activeSelf == false)
             {
                 spit = t.gameObject;
                 break;
@@ -58,14 +60,16 @@ public class PlayerMovement : MonoBehaviour
         }
         if (spit == null)
         {
-            spit = Instantiate(spitObject);
+            spit = Instantiate(spitObject, spitList);
         }
         else
         {
+            spit.transform.parent = transform;
             spit.SetActive(true);
-            spit.transform.SetPositionAndRotation(firePoint.position, firePoint.rotation);
         }
+        spit.transform.SetPositionAndRotation(firePoint.position, firePoint.rotation);
         spit.GetComponent<Spit>().Shot(firePoint);
+        spit.transform.parent = spitList;
 
 	}
 
