@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7211557306250607732, guid: fd38b582358d26747bbb4cab83c41700, type: 3}
+      propertyPath: enemySpawnInterval
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7211557306250607733, guid: fd38b582358d26747bbb4cab83c41700, type: 3}
       propertyPath: m_Name
       value: SpiderSpawner (1)
@@ -482,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4669348246673413399, guid: 9793b6f67fd7006478e3093db3118283, type: 3}
       propertyPath: enemySpawnInterval
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9793b6f67fd7006478e3093db3118283, type: 3}
@@ -887,7 +891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7211557306250607732, guid: fd38b582358d26747bbb4cab83c41700, type: 3}
       propertyPath: enemySpawnInterval
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7211557306250607733, guid: fd38b582358d26747bbb4cab83c41700, type: 3}
       propertyPath: m_Name
@@ -1091,8 +1095,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4669348246673413399, guid: 9793b6f67fd7006478e3093db3118283, type: 3}
+      propertyPath: enemySpawnInterval
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9793b6f67fd7006478e3093db3118283, type: 3}
+--- !u!82 &1984999648 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 100103249, guid: 3e8e97698fc16e74fa113c0a94499dc8, type: 3}
+  m_PrefabInstance: {fileID: 5387812781065026321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2038860701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,6 +1285,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100103249, guid: 3e8e97698fc16e74fa113c0a94499dc8, type: 3}
+      propertyPath: m_Volume
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 1480494596166382366, guid: 3e8e97698fc16e74fa113c0a94499dc8, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1328,7 +1345,12 @@ PrefabInstance:
       propertyPath: spitList
       value: 
       objectReference: {fileID: 704186347}
-    m_RemovedComponents: []
+    - target: {fileID: 5577887255854203224, guid: 3e8e97698fc16e74fa113c0a94499dc8, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1984999648}
+    m_RemovedComponents:
+    - {fileID: 5058893730311110858, guid: 3e8e97698fc16e74fa113c0a94499dc8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e8e97698fc16e74fa113c0a94499dc8, type: 3}
 --- !u!1001 &6697558869254397608
 PrefabInstance:
