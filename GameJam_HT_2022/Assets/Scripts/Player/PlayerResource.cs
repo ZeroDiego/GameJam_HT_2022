@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 public class PlayerResource : MonoBehaviour
 {
     public float jam = 100;
+	private float maxJam;
 	[SerializeField] private float jamReducer = 0.10f;
 	[SerializeField] private float jamAdditive = 0.05f;
 	[SerializeField] private float jamReducerLimit = 0.4f;
+	[SerializeField] private float invisTime = 1.5f;
 	public float hitPoints = 100f;
 	private GameOverUI gameOverUI;
+	private float timer = 1;
 
 	private static PlayerResource instance;
 	public static PlayerResource Instance { get { return instance; } set { instance = value; } }
@@ -29,12 +32,14 @@ public class PlayerResource : MonoBehaviour
 
 	private void Start()
 	{
+		maxJam = jam;
 		gameOverUI = FindObjectOfType<GameOverUI>();
 		InvokeRepeating(nameof(ReduceMoreJam), 0, 5f);
 	}
 
 	private void FixedUpdate()
 	{
+		timer += Time.deltaTime;
 		if (jam <= 0)
 		{
 			TakeDamage(jamReducer);
@@ -48,14 +53,22 @@ public class PlayerResource : MonoBehaviour
 	public void EatJam(int jamValue)
 	{
 		jam += jamValue;
+		if (jam > maxJam)
+		{
+			jam = maxJam;
+		}
 	}
 
 	public void TakeDamage(float damage)
 	{
-		hitPoints -= damage;
-		if (hitPoints <= 0)
+		if (timer > invisTime || damage < 1)
 		{
-			gameOverUI.GameOver();
+			timer = 0;
+			hitPoints -= damage;
+			if (hitPoints <= 0)
+			{
+				gameOverUI.GameOver();
+			}
 		}
 	}
 

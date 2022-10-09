@@ -32,13 +32,13 @@ public class Bee_Movement : MonoBehaviour
         if(isFacingRight == true)
         {
             Vector3 scale = transform.localScale;
-            scale.x = -1;
+            scale.x *= -1;
             transform.localScale = scale;
         }
         else
         {
             Vector3 scale = transform.localScale;
-            scale.x = 1;
+            scale.x *= 1;
             transform.localScale = scale;
         }
     }
@@ -63,7 +63,7 @@ public class Bee_Movement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") == true)
         {

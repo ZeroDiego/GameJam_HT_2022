@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 public class GameOverUI : MonoBehaviour
 {
 	[SerializeField] private GameObject gameOverUI;
+	[SerializeField] private UI_Time timerObject;
+	[SerializeField] private UI_ScoreText scoreTextObject;
 
 	public void GameOver()
 	{
 		gameOverUI.SetActive(true);
+		int time = Mathf.FloorToInt(timerObject.timer);
+		PlayerPrefs.SetInt("Score", time);
+		scoreTextObject.SetText();
 		Time.timeScale = 0;
 	}
 
