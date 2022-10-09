@@ -5133,7 +5133,7 @@ MonoBehaviour:
   jamReducerLimit: 0.4
   invisTime: 1.5
   takeDamageParticles: {fileID: 471073138}
-  jamPickup: {fileID: 8300000, guid: a2d6b1a4a87030046ac20d33f779a00a, type: 3}
+  jamPickup: {fileID: 8300000, guid: 72f811da7eaa20d40a9f85200302da59, type: 3}
   hitPoints: 100
 --- !u!82 &100103249
 AudioSource:
