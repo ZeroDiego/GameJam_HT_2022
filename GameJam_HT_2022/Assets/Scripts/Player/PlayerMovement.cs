@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip spitClip;
     [SerializeField] private float timer;
-    [SerializeField] private float shotCooldown = 0.4f;
+    [SerializeField] private float shotCooldown = 0.8f;
 
     private static PlayerMovement instance;
     public static PlayerMovement Instance { get { return instance; } set { instance = value; } }
