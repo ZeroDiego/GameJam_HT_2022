@@ -11,7 +11,8 @@ public class PlayerResource : MonoBehaviour
 	[SerializeField] private float jamAdditive = 0.05f;
 	[SerializeField] private float jamReducerLimit = 0.4f;
 	[SerializeField] private float invisTime = 1.5f;
-	public float hitPoints = 100f;
+    [SerializeField] private ParticleSystem takeDamageParticles;
+    public float hitPoints = 100f;
 	private GameOverUI gameOverUI;
 	private float timer = 1;
 
@@ -64,7 +65,8 @@ public class PlayerResource : MonoBehaviour
 		if (timer > invisTime || damage < 1)
 		{
 			timer = 0;
-			hitPoints -= damage;
+            takeDamageParticles.Play();
+            hitPoints -= damage;
 			if (hitPoints <= 0)
 			{
 				gameOverUI.GameOver();
