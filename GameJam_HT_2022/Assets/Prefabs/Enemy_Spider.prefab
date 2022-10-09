@@ -4993,9 +4993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b02c5d0376d2794e904acced42143e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 3
   rotationSpeed: 4
-  enemyDamage: 20
+  enemyDamage: 10
   audioSource: {fileID: 1570705714}
   eatJamClip: {fileID: 8300000, guid: e964187669a9e9f41a5eff05342e1f9f, type: 3}
 --- !u!61 &1570705716
