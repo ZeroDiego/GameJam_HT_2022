@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 598923372}
   - component: {fileID: 598923371}
   - component: {fileID: 598923370}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BeeDeathEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4886,7 +4886,7 @@ GameObject:
   - component: {fileID: 491061278}
   - component: {fileID: 491061279}
   - component: {fileID: 5547438042803309261}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy_Bee
   m_TagString: Bee
   m_Icon: {fileID: 0}

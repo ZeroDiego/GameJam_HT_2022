@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1417812748}
   - component: {fileID: 1417812747}
   - component: {fileID: 1417812746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpiderDeathEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4886,7 +4886,7 @@ GameObject:
   - component: {fileID: 1570705714}
   - component: {fileID: 1570705715}
   - component: {fileID: 227370448}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy_Spider
   m_TagString: Spider
   m_Icon: {fileID: 0}
