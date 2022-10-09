@@ -1349,6 +1349,10 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1984999648}
+    - target: {fileID: 5577887255854203224, guid: 3e8e97698fc16e74fa113c0a94499dc8, type: 3}
+      propertyPath: shotCooldown
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5058893730311110858, guid: 3e8e97698fc16e74fa113c0a94499dc8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e8e97698fc16e74fa113c0a94499dc8, type: 3}

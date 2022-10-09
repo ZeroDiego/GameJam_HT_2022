@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip spitClip;
     [SerializeField] private float timer;
-    [SerializeField] private float shotCooldown = 0.8f;
+    [SerializeField] private float shotCooldown = 0.2f;
 
     private static PlayerMovement instance;
     public static PlayerMovement Instance { get { return instance; } set { instance = value; } }
@@ -38,15 +38,17 @@ public class PlayerMovement : MonoBehaviour
 
 	void Start()
     {
+        timer = shotCooldown;
         body = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
+        timer += Time.deltaTime;
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
         RotateAfterMouse();
-        if (Input.GetMouseButtonDown(0) && timer < shotCooldown)
+        if (Input.GetMouseButton(0) && timer > shotCooldown)
         {
             Shoot();
         }
@@ -54,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Shoot()
 	{
+        timer = 0;
         GameObject spit = null;
         audioSource.PlayOneShot(spitClip);
         foreach (Transform t in spitList)
