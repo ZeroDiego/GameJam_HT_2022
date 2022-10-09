@@ -9,7 +9,7 @@ public class PlayerResource : MonoBehaviour
 	private float maxJam;
 	[SerializeField] private float jamReducer = 0.10f;
 	[SerializeField] private float jamAdditive = 0.05f;
-	[SerializeField] private float jamReducerLimit = 0.4f;
+	[SerializeField] private float jamReducerLimit = 0.5f;
 	[SerializeField] private float invisTime = 1.5f;
     [SerializeField] private ParticleSystem takeDamageParticles;
 	[SerializeField] private AudioClip jamPickup;
@@ -37,7 +37,7 @@ public class PlayerResource : MonoBehaviour
 	{
 		maxJam = jam;
 		gameOverUI = FindObjectOfType<GameOverUI>();
-		InvokeRepeating(nameof(ReduceMoreJam), 0, 5f);
+		InvokeRepeating(nameof(ReduceMoreJam), 0, 8f);
 		audioSource = GetComponent<AudioSource>();
 	}
 
