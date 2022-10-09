@@ -12,6 +12,9 @@ public class Spider_Movement : MonoBehaviour
     public float rotationSpeed = 4f;
     public float enemyDamage = 20f;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip eatJamClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +59,14 @@ public class Spider_Movement : MonoBehaviour
         if(collision.gameObject.CompareTag("Player") == true)
         {
             collision.gameObject.GetComponent<PlayerResource>().TakeDamage(enemyDamage);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Jam"))
+        {
+            audioSource.PlayOneShot(eatJamClip);
         }
     }
 }

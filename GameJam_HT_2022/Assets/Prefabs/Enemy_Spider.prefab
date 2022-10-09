@@ -4994,8 +4994,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  rotationSpeed: 2
+  rotationSpeed: 4
   enemyDamage: 20
+  audioSource: {fileID: 1570705714}
+  eatJamClip: {fileID: 8300000, guid: e964187669a9e9f41a5eff05342e1f9f, type: 3}
 --- !u!61 &1570705716
 BoxCollider2D:
   m_ObjectHideFlags: 0
