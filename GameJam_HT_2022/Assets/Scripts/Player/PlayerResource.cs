@@ -12,6 +12,8 @@ public class PlayerResource : MonoBehaviour
 	[SerializeField] private float jamReducerLimit = 0.4f;
 	[SerializeField] private float invisTime = 1.5f;
     [SerializeField] private ParticleSystem takeDamageParticles;
+	[SerializeField] private AudioClip jamPickup;
+	private AudioSource audioSource;
     public float hitPoints = 100f;
 	private GameOverUI gameOverUI;
 	private float timer = 1;
@@ -36,6 +38,7 @@ public class PlayerResource : MonoBehaviour
 		maxJam = jam;
 		gameOverUI = FindObjectOfType<GameOverUI>();
 		InvokeRepeating(nameof(ReduceMoreJam), 0, 5f);
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	private void FixedUpdate()
@@ -57,6 +60,7 @@ public class PlayerResource : MonoBehaviour
 		if (jam > maxJam)
 		{
 			jam = maxJam;
+			audioSource.PlayOneShot(jamPickup);
 		}
 	}
 
